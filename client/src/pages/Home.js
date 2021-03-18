@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
-import { Jumbotron, Button, List } from "react-bootstrap";
+import Hero from "../components/Hero";
 import BookCard from "../components/BookCard";
 function Home() {
   const [books, setBooks] = useState({});
@@ -30,25 +30,9 @@ function Home() {
 
   return (
     <div>
+      <Hero title="Searched Books" />
       {books.length ? (
         <div>
-          <Jumbotron
-            style={{
-              backgroundImage:
-                "url('https://content.fortune.com/wp-content/uploads/2016/06/171152625.jpg')",
-              color: "white",
-            }}
-          >
-            <h1
-              style={{
-                background: "grey",
-                display: "inline",
-                border: "rounded",
-              }}
-            >
-              Searched Books
-            </h1>
-          </Jumbotron>
           {books.map((book) => (
             <BookCard book={book} />
           ))}
