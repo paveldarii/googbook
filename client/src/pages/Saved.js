@@ -22,7 +22,7 @@ function Saved() {
       {books.length ? (
         <div>
           {books.map((book) => (
-            <BookCard book={book} />
+            <BookCard book={book} headerButton="delete" loadBooks={loadBooks} />
           ))}
         </div>
       ) : (
