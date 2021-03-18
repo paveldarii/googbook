@@ -13,19 +13,23 @@ function BookCard(props) {
       style={{ margin: "20px", background: "#C4DFE6" }}
     >
       <Card.Header style={{ background: "#07575B", color: "white" }}>
-        {props.book.title}
-        <Button style={{ background: "#66A5AD", float: "right" }}>
+        {props.book.categories}
+        <Button
+          variant="outline-info"
+          style={{ background: "#66A5AD", float: "right" }}
+        >
           Save Book
         </Button>
         <Button
           href={props.book.link}
+          variant="outline-info"
           style={{
             background: "#66A5AD",
             float: "right",
             margin: "0px 20px 0px 0px",
           }}
         >
-          Read Book
+          Find More
         </Button>
       </Card.Header>
       <Card.Body>
