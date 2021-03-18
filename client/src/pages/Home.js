@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
-import { Jumbotron, Button } from "react-bootstrap";
-
+import { Jumbotron, Button, List } from "react-bootstrap";
+import BookCard from "../components/BookCard";
 function Home() {
   const [books, setBooks] = useState({});
   const structureBook = (bookData) => {
@@ -29,16 +29,34 @@ function Home() {
   }
 
   return (
-    <Jumbotron>
-      <h1>Searched</h1>
-      <p>
-        This is a simple hero unit, a simple jumbotron-style component for
-        calling extra attention to featured content or information.
-      </p>
-      <p>
-        <Button variant="primary">Learn more</Button>
-      </p>
-    </Jumbotron>
+    <div>
+      {books.length ? (
+        <div>
+          <Jumbotron
+            style={{
+              backgroundImage:
+                "url('https://content.fortune.com/wp-content/uploads/2016/06/171152625.jpg')",
+              color: "white",
+            }}
+          >
+            <h1
+              style={{
+                background: "grey",
+                display: "inline",
+                border: "rounded",
+              }}
+            >
+              Searched Books
+            </h1>
+          </Jumbotron>
+          {books.map((book) => (
+            <BookCard book={book} />
+          ))}
+        </div>
+      ) : (
+        <h3>No Results to Display</h3>
+      )}
+    </div>
   );
 }
 
