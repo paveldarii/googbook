@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 
 function Navigation() {
+  const [query, setQuery] = useState("");
   return (
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="/home">GoogBook</Navbar.Brand>
@@ -11,8 +12,19 @@ function Navigation() {
         <Nav.Link href="/categories">Categories</Nav.Link>
       </Nav>
       <Form inline>
-        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-        <Button variant="outline-info">Search Book</Button>
+        <FormControl
+          type="text"
+          placeholder="Search"
+          className="mr-sm-2"
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <Button
+          href="/"
+          onClick={() => localStorage.setItem("searchQuery", query)}
+          variant="outline-info"
+        >
+          Search Book
+        </Button>
       </Form>
     </Navbar>
   );
