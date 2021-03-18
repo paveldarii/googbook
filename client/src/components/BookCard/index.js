@@ -2,6 +2,11 @@ import React from "react";
 import { Image, Card, Button } from "react-bootstrap";
 
 function BookCard(props) {
+  const loadAuthors = (props) => {
+    if (props.book.authors) {
+      return <Card.Text>by {props.book.authors}</Card.Text>;
+    }
+  };
   return (
     <Card
       key={props.book._id}
@@ -12,18 +17,26 @@ function BookCard(props) {
         <Button style={{ background: "#66A5AD", float: "right" }}>
           Save Book
         </Button>
+        <Button
+          href={props.book.link}
+          style={{
+            background: "#66A5AD",
+            float: "right",
+            margin: "0px 20px 0px 0px",
+          }}
+        >
+          Read Book
+        </Button>
       </Card.Header>
       <Card.Body>
         <Image
           src={props.book.image}
-          style={{ margin: "0px 20px 0px 20px", float: "left" }}
+          style={{ margin: "0px 20px 0px 0px", float: "left" }}
         />
 
         <Card.Title>{props.book.title}</Card.Title>
-        <Card.Text>
-          With supporting text below as a natural lead-in to additional content.
-        </Card.Text>
-        <Button style={{ background: "#66A5AD" }}>Go somewhere</Button>
+        {loadAuthors(props)}
+        <Card.Text>{props.book.description}</Card.Text>
       </Card.Body>
     </Card>
   );
