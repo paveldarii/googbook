@@ -7,7 +7,7 @@ function Hero(props) {
       style={{
         backgroundImage:
           "url('https://content.fortune.com/wp-content/uploads/2016/06/171152625.jpg')",
-        color: "Black",
+        color: "#07575B",
       }}
     >
       <h1
@@ -15,7 +15,7 @@ function Hero(props) {
           background: "#C4DFE6",
           display: "inline",
           padding: "0px 10px 0px 10px",
-          border: "3px solid #07575B",
+          border: "3px dashed #07575B",
           borderRadius: "10px",
         }}
       >
