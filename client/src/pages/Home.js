@@ -6,7 +6,7 @@ function Home() {
   const [books, setBooks] = useState({});
   const structureBook = (bookData) => {
     return {
-      _id: bookData.id,
+      googleId: bookData.id,
       title: bookData.volumeInfo.title,
       authors: bookData.volumeInfo.authors,
       description: bookData.volumeInfo.description,
@@ -35,7 +35,7 @@ function Home() {
       {books.length ? (
         <div>
           {books.map((book) => (
-            <BookCard book={book} />
+            <BookCard book={book} headerButton="save" />
           ))}
         </div>
       ) : (
