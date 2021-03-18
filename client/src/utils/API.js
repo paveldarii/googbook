@@ -19,7 +19,7 @@ export default {
   },
 
   //Get saved books
-  savedBooks: function () {
+  getSavedBooks: function () {
     return axios.get("/api/books/saved");
   },
 };
