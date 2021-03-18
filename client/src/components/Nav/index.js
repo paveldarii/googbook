@@ -4,7 +4,7 @@ import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 function Navigation() {
   const [query, setQuery] = useState("");
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar style={{ background: "#003B46" }} variant="dark">
       <Navbar.Brand href="/home">GoogBook</Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link href="/home">Home</Nav.Link>
