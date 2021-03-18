@@ -12,6 +12,7 @@ function Home() {
       description: bookData.volumeInfo.description,
       image: bookData.volumeInfo.imageLinks.thumbnail,
       link: bookData.volumeInfo.previewLink,
+      categories: bookData.volumeInfo.categories,
     };
   };
   useEffect(() => {
@@ -22,7 +23,7 @@ function Home() {
   function loadBooks() {
     API.getBooks(localStorage.getItem("searchQuery"))
       .then((res) => {
-        console.log(res.data.items.map((bookData) => structureBook(bookData)));
+        console.log(res.data.items);
         setBooks(res.data.items.map((bookData) => structureBook(bookData)));
       })
       .catch((err) => console.log(err));

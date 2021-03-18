@@ -9,12 +9,11 @@ function Navigation() {
       <Nav className="mr-auto">
         <Nav.Link href="/home">Home</Nav.Link>
         <Nav.Link href="/saved">Saved</Nav.Link>
-        <Nav.Link href="/categories">Categories</Nav.Link>
       </Nav>
       <Form inline>
         <FormControl
           type="text"
-          placeholder="Search"
+          placeholder="search book"
           className="mr-sm-2"
           onChange={(e) => setQuery(e.target.value)}
         />
@@ -22,8 +21,9 @@ function Navigation() {
           href="/"
           onClick={() => localStorage.setItem("searchQuery", query)}
           variant="outline-info"
+          style={{ background: "#66A5AD" }}
         >
-          Search Book
+          Search
         </Button>
       </Form>
     </Navbar>
