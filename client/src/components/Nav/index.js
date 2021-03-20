@@ -3,9 +3,23 @@ import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 
 function Navigation() {
   const [query, setQuery] = useState("");
+  const style = {
+    outside: {
+      color: "#F96167",
+    },
+    inside: {
+      color: "#FCE77D",
+    },
+  };
   return (
     <Navbar style={{ background: "#003B46" }} variant="dark">
-      <Navbar.Brand href="/home">GoogBook</Navbar.Brand>
+      <Navbar.Brand href="/home">
+        <span style={style.outside}>G</span>
+        <span style={style.inside}>oo</span>
+        <span style={style.outside}>gB</span>
+        <span style={style.inside}>oo</span>
+        <span style={style.outside}>k</span>
+      </Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link href="/saved">Saved</Nav.Link>
       </Nav>
