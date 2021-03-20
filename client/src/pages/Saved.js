@@ -16,6 +16,7 @@ function Saved() {
       })
       .catch((err) => console.log(err));
   }
+
   return (
     <div>
       <Hero title="Saved Books" />
