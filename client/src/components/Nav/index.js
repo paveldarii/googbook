@@ -7,7 +7,6 @@ function Navigation() {
     <Navbar style={{ background: "#003B46" }} variant="dark">
       <Navbar.Brand href="/home">GoogBook</Navbar.Brand>
       <Nav className="mr-auto">
-        <Nav.Link href="/home">Home</Nav.Link>
         <Nav.Link href="/saved">Saved</Nav.Link>
       </Nav>
       <Form inline>
