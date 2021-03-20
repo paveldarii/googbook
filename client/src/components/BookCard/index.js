@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image, Card, Button } from "react-bootstrap";
 import API from "../../utils/API";
 
 function BookCard(props) {
+  const [saveStatus, setSaveStatus] = useState("Save Book");
+  const [deleteStatus, setDeleteStatus] = useState("Delete Book");
   const loadAuthors = (props) => {
     if (props.book.authors || props.authors) {
       return <Card.Text>by {props.book.authors || props.authors}</Card.Text>;
@@ -11,15 +13,15 @@ function BookCard(props) {
   function saveBook(bookData) {
     API.saveBook(bookData)
       .then((res) => {
-        alert("saved");
+        setSaveStatus("Saved");
       })
       .catch((err) => console.log(err));
   }
   function deleteBook(_id) {
     API.deleteSavedBook(_id)
-
       .then((res) => {
-        alert("deleted");
+        setDeleteStatus("Deleted");
+        props.loadBooks();
       })
       .catch((err) => console.log(err));
   }
@@ -35,7 +37,7 @@ function BookCard(props) {
             variant="outline-info"
             style={{ background: "#66A5AD", float: "right" }}
           >
-            Delete Book
+            {deleteStatus}
           </Button>
         );
       }
@@ -49,7 +51,7 @@ function BookCard(props) {
             variant="outline-info"
             style={{ background: "#66A5AD", float: "right" }}
           >
-            Save Book
+            {saveStatus}
           </Button>
         );
       }
@@ -65,6 +67,7 @@ function BookCard(props) {
         {displayLastButton(props)}
         <Button
           href={props.book.link}
+          target="_blank"
           variant="outline-info"
           style={{
             background: "#66A5AD",
@@ -72,7 +75,7 @@ function BookCard(props) {
             margin: "0px 20px 0px 0px",
           }}
         >
-          Find More
+          Learn More
         </Button>
       </Card.Header>
       <Card.Body>
