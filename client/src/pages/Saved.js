@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import Hero from "../components/Hero";
 import API from "../utils/API";
 import BookCard from "../components/BookCard";
+import NoResults from "../components/NoResults";
 function Saved() {
   const [books, setBooks] = useState({});
 
   useEffect(() => {
     loadBooks();
   }, []);
+
   function loadBooks() {
     API.getSavedBooks()
       .then((res) => {
@@ -26,7 +28,7 @@ function Saved() {
           ))}
         </div>
       ) : (
-        <h3>No Results to Display</h3>
+        <NoResults />
       )}
     </div>
   );
