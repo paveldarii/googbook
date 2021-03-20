@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 import Hero from "../components/Hero";
 import BookCard from "../components/BookCard";
+import NoResults from "../components/NoResults";
+
 function Home() {
   const [books, setBooks] = useState({});
   const structureBook = (bookData) => {
@@ -39,7 +41,7 @@ function Home() {
           ))}
         </div>
       ) : (
-        <h3>No Results to Display</h3>
+        <NoResults />
       )}
     </div>
   );
