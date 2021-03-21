@@ -18,7 +18,7 @@
 
 [Deployed app:https://googbook1.herokuapp.com/ ](https://googbook1.herokuapp.com/)
 
-Technologies: Mongo Express React Node.
+Technologies: Mongo Express React Node AtlasDB Heroku.
 
 GoogBook is an application for those who enjoy to read, so it will be used any time the user wants to search for a new book and wants to keep the track of interesting books by saving them.
 
