@@ -16,7 +16,7 @@
 
 ## Description
 
-![Deployed app: ]()
+[Deployed app: ]()
 
 Technologies: Mongo Express React Node.
 
